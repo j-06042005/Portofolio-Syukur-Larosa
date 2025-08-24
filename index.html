@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Syukur Larosa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hero">
+  <div class="header-logos">
+    <img src="hoho.jpg" alt="Logo PERADI" class="logo">
+  </div>
+
+  <img src="3.jpg" alt="Foto Syukur Larosa" class="profile-img" onclick="openModalProfile()">
+  <h1>Syukur Larosa</h1>
+  <p>Advocate & Legal Consultant</p>
+</header>
+
+<!-- MODAL FOTO PROFIL -->
+<div id="profileModal" class="modal" onclick="closeModalProfile(event)">
+  <span class="close" onclick="closeModalProfile(event)">&times;</span>
+  <img class="modal-content" id="profileModalImage">
+</div>
+
+<!-- TENTANG SAYA -->
+<section class="section light">
+  <h2>Tentang Saya</h2>
+  <p>
+    Seorang Advokat, Pengacara dan Konsultan Hukum yang menjalankan tugas sebagai Penegak Hukum untuk menegakkan Hukum & Keadilan yang wilayah kerjanya meliputi seluruh wilayah negara kesatuan Republik Indonesia sebagaimana diamanatkan dalam Undang-Undang Republik Indonesia nomor 18 Tahun 2003 tentang Advokat dan juga Peraturan Peradi tentang Kode Etik Advokat.
+  </p>
+  <p>
+   Syukurniatman Larosa, S.H. merupakan anggota Perhimpunan Advokat Indonesia (PERADI) yang berada dibawah kepemimpinan Ketua Umum Prof. Dr. Otto Hasibuan, S.H., M.M., yang telah diangkat dan diambil sumpahnya sebagai Advokat di wilayah hukum Pengadilan Tinggi Yogyakarta.
+  </p>
+</section>
+
+<!-- PENGALAMAN -->
+<section class="section gray">
+  <h2>Pengalaman Kerja</h2>
+  <div class="timeline">
+    <div>
+      <h3>Junior Associate – WLP Law Firm (2022–2023)</h3>
+      <ul>
+        <li>Sidang, mediasi, negosiasi, legal drafting</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Legal Corporate – PT. Lintas Bahari (2023)</h3>
+      <ul>
+        <li>Pembuatan kontrak, legal review, pengurusan OSS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PENDIDIKAN -->
+<section class="section light">
+  <h2>Pendidikan</h2>
+  <ul>
+    <li><strong>Universitas Janabadra</strong><br>S1 Ilmu Hukum - Cumlaude</li>
+    <li><strong>PERADI</strong><br>PKPA & UPA Lulus</li>
+  </ul>
+</section>
+
+<!-- LAYANAN -->
+<section class="section gray">
+  <h2>Layanan Jasa Hukum</h2>
+  <ul class="law-services">
+    <li>Perkara Perdata</li>
+    <li>Perkara Pidana</li>
+    <li>Sengketa Pertanahan</li>
+    <li>Sengketa Ketenagakerjaan</li>
+    <li>Sengketa Waris</li>
+    <li>Sengketa Hak Kekayaan Intelektual</li>
+    <li>Pembuatan Perjanjian (Kerjasama, MoU, Bisnis, dll)</li>
+    <li>Mediasi</li>
+    <li>Negosiasi</li>
+    <li>Layanan hukum lainnya</li>
+  </ul>
+</section>
+
+<!-- KONTAK -->
+<section class="section dark contact-section">
+  <h2>Kontak</h2>
+  <div class="contact-info">
+    <p><strong>📞 WhatsApp:</strong> 0823-2603-9808</p>
+    <p><strong>📧 Email:</strong> <a href="mailto:syukurlarossa@gmail.com">syukurlarossa@gmail.com</a></p>
+    <p><strong>📍 Alamat:</strong> Jakarta Barat, Indonesia</p>
+    <p><strong>📱 Instagram:</strong> <a href="https://instagram.com/syukur.larossa" target="_blank">@syukur.larossa</a></p>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section class="section light gallery-section">
+  <h2>Galeri Foto</h2>
+  <div class="gallery-grid">
+    <img src="1.jpg" alt="Galeri 1" onclick="openModal(0)">
+    <img src="2.jpg" alt="Galeri 2" onclick="openModal(1)">
+    <img src="3.jpg" alt="Galeri 3" onclick="openModal(2)">
+    <img src="4.jpg" alt="Galeri 4" onclick="openModal(3)">
+    <img src="5.jpg" alt="Galeri 5" onclick="openModal(4)">
+    <img src="6.jpg" alt="Galeri 6" onclick="openModal(5)">
+    <img src="7.jpg" alt="Galeri 7" onclick="openModal(6)">
+    <img src="8.jpg" alt="Galeri 8" onclick="openModal(7)">
+    <img src="9.jpg" alt="Galeri 9" onclick="openModal(8)">
+    <img src="10.jpg" alt="Galeri 10" onclick="openModal(9)">
+    <img src="11.jpg" alt="Galeri 11" onclick="openModal(10)">
+    <img src="12.jpg" alt="Galeri 12" onclick="openModal(11)">
+  </div>
+</section>
+
+<!-- MODAL GALERI -->
+<div id="modal" class="modal" onclick="closeModal(event)">
+  <span class="close" onclick="closeModal(event)">&times;</span>
+  <img class="modal-content" id="modal-image">
+  <button class="nav prev" onclick="prevImage(event)">&#10094;</button>
+  <button class="nav next" onclick="nextImage(event)">&#10095;</button>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  const images = [
+    "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg",
+    "7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg"
+  ];
+  let currentIndex = 0;
+
+  // Foto profil modal
+  function openModalProfile() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "flex";
+    document.getElementById("modal-image").src = "3.jpg";
+    document.querySelector(".prev").style.display = "none";
+    document.querySelector(".next").style.display = "none";
+  }
+
+  // Buka galeri
+  function openModal(index) {
+    currentIndex = index;
+    const modal = document.getElementById("modal");
+    modal.style.display = "flex";
+    document.getElementById("modal-image").src = images[currentIndex];
+    document.querySelector(".prev").style.display = "block";
+    document.querySelector(".next").style.display = "block";
+  }
+
+  function closeModal(event) {
+    if (event.target.className === "modal" || event.target.className === "close") {
+      document.getElementById("modal").style.display = "none";
+    }
+  }
+
+  function prevImage(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("modal-image").src = images[currentIndex];
+  }
+
+  function nextImage(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("modal-image").src = images[currentIndex];
+  }
+</script>
+
+</body>
+</html>
